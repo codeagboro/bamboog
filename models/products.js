@@ -1,12 +1,13 @@
 const mongoose = require("mongoose");
 
-const drinkSchema = new mongoose.Schema(
+const productsSchema = new mongoose.Schema(
     {
-        drinkName:{
+        productName:{
             type: String,
         },
-        manufacturer:{
+        category:{
             type: String,
+            enum: ["Drinks", "Confectionery"]
         },
         price:{
             type: String,
@@ -20,5 +21,5 @@ const drinkSchema = new mongoose.Schema(
     }
 );
 
-const drinks = mongoose.model("drinks", drinkSchema);
-module.exports = drinks;
+const products = mongoose.model("products", productsSchema);
+module.exports = products;

@@ -1,6 +1,18 @@
 # Bamboog API
 
-This is a Node.js API built with the Express framework. It uses MongoDB as a database and provides endpoints for user authentication and drinks information.
+BambooG is a relaxation centre located in Abeokuta, Ogun State. It is known for selling expensive drinks and confectionery.
+
+This is a Node.js API built with the Express framework. It uses MongoDB as a database and provides endpoints for user authentication and drinks information. This project uses role based access control (RBAC) to secure who can view which information. Based on the RBAC for this project we have access control for two sets of users.
+
+## Users:
+- Can register with the following data Phone Number, Age, Email, First Name, Last Name and Password
+- Can Login be using Email address and Password
+- Can see all available items (drinks and confectionery) uploaded by Admin.
+
+## Admin:
+- Can see all registered users
+- Can search for users using their email address.
+- Can post a list of available items (drinks and confectionery) so users logged in can see
 
 ## Getting Started
 
@@ -310,9 +322,12 @@ http://localhost:4532/api/v1/user/alldrinks
 
 # POSTMAN DOCUMENTATION
 ```json
-https://documenter.getpostman.com/view/25494840/2s93JzM175
+https://documenter.getpostman.com/view/25494840/2s93K1peq7
 ```
-
+## Article link on Exception handling in Node Js Express
+```json
+https://dev.to/codeagboro/handling-exception-in-node-js-express-4nmf
+```
 
 ## Error Responses
 

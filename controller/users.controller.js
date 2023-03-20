@@ -2,7 +2,7 @@ const express = require("express")
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
 const User = require("../models/users.model")
-const drinks = require("../models/drinks.model")
+const products = require("../models/products")
 
 exports.userSignup = async (req, res) => {
     const {firstName, lastName, age, email, password, phoneNumber, role } = req.body;
@@ -69,9 +69,10 @@ exports.login = async (req, res) => {
         },
             process.env.JWT_SECRET,
             {
-                expiresIn: "3m",
+                expiresIn: "60m",
             }
         );
+
         res.cookie("token", {
             httpOnly: true,
             secure: true,
@@ -91,13 +92,42 @@ exports.login = async (req, res) => {
     }
 }
 
-exports.availableDrinks = async (req, res) => {
-    try {
-        const alldrinks = await drinks.find()
-        return res.status(201).json({
-            alldrinks
-        })
-    } catch (error) {
+exports.logout = async(req, res) =>{
+    res.clearCookie("token");
+    return res.status(200).json({
+        message: "User logged out"
+    })
+}
+
+exports.findByCategory = async (req, res) => {
+    
+    try{
+            const { category } = req.params;
+          
+            const validCategories = ["Drinks", "Confectionery"];
+            if (!validCategories.includes(category)) {
+              return res.status(400).json({ message: "Invalid category" });
+            }
+          
+            const findProducts = await products.find({ category });
+            if (findProducts.length === 0) {
+              return res.status(404).json({ message: "No items found in this category" });
+            }
+          
+            const categoryItems = findProducts.map((product) => {
+              return {
+                productName: product.productName,
+                price: product.price,
+                quantity: product.quantity
+              };
+            });
+          
+            return res.status(200).json({
+              categoryItems,
+            });
+          }
+          
+        catch (error) {
         return res.status(500).json({
             message: "Something went wrong",
             error: error.message,

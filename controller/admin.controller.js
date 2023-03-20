@@ -4,7 +4,7 @@ const express = require("express");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("../models/users.model");
-const drinks = require("../models/drinks.model");
+const products = require("../models/products");
 
 
 exports.allUsers = async (req, res) => {
@@ -43,14 +43,14 @@ exports.getUser = async (req, res) => {
   }
 };
 
-exports.addDrinks = async (req, res) => {
-  const { email, drinkName, manufacturer, quantity, price } = req.body;
+exports.addProducts = async (req, res) => {
+  const { productName, category, quantity, price } = req.body;
   try {
-    const drinkExists = await drinks.findOne({ drinkName });
+    const productExists = await products.findOne({ productName });
 
-    if (drinkExists) {
-      await drinks.findOneAndUpdate(
-        { drinkName },
+    if (productExists) {
+      await products.findOneAndUpdate(
+        { productName },
         {
           $inc: { quantity },
         },
@@ -59,20 +59,20 @@ exports.addDrinks = async (req, res) => {
         }
       );
       return res.status(200).json({
-        message: `${drinkName} updated by ${quantity}`,
+        message: `${productName} updated by ${quantity}`,
       });
     }
 
-    const newDrink = await drinks.create({
-      drinkName,
-      manufacturer,
+    const newProduct = await products.create({
+      productName,
+      category,
       quantity,
       price,
     });
 
     return res.status(200).json({
-      message: `${drinkName} added successfully`,
-      newDrink,
+      message: `${productName} added successfully`,
+      newProduct,
     });
   } catch (error) {
     console.error(error);
