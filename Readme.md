@@ -93,7 +93,7 @@ Endpoint: `POST ap1/v1/user/login`
 ```json
 {
     "message": "Login successful",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5kb2VAZXhhbXBsZS5jb20iLCJpZCI6IjYzMTI5ZjNiNGU5OWRmMTE5ZjgyODZlNyIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInBob25lTnVtYmVyIjoiMTIzNDU2Nzg5MCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjE3NjMwNjM0LCJleHAiOjE2MTc2MzA2NTR9.1zQidB8WfvGyLYb-lEi7PYGTXoOqVfZuQvz1V7lYJd8"
+    "token": {{TOKEN}}
 }
 ```
 
@@ -114,211 +114,185 @@ http://localhost:4532/api/v1/user/allusers
 - `users` (array) - An array of all users.
 ```json
 {
-    "users": [
-        {
-            "_id": "64131f9a1a51b5873cd9b70f",
-            "firstName": "john",
-            "lastName": "doe",
-            "age": 18,
-            "email": "johndoe@examplemail.com",
-            "password": "$2b$10$2SgroUM5ozSUMwhQqUAW8eFC1XcxIgDpfYgLA6h4Yd3dWPxMVdps2",
-            "phoneNumber": "01254789651",
-            "role": "admin",
-            "createdAt": "2023-03-16T13:54:34.692Z",
-            "updatedAt": "2023-03-16T13:54:34.692Z",
-            "__v": 0
-        },
-        {
-            "_id": "64131f9a1a51b5873cd9b70f",
-            "firstName": "john",
-            "lastName": "doe",
-            "age": 18,
-            "email": "johndoe@examplemail.com",
-            "password": "$2b$10$2SgroUM5ozSUMwhQqUAW8eFC1XcxIgDpfYgLA6h4Yd3dWPxMVdps2",
-            "phoneNumber": "01254789651",
-            "role": "user",
-            "createdAt": "2023-03-16T13:55:07.815Z",
-            "updatedAt": "2023-03-16T13:55:07.815Z",
-            "__v": 0
-        },
-        {
-            "_id": "64131f9a1a51b5873cd9b70f",
-            "firstName": "john",
-            "lastName": "doe",
-            "age": 18,
-            "email": "johndoe@examplemail.com",
-            "password": "$2b$10$2SgroUM5ozSUMwhQqUAW8eFC1XcxIgDpfYgLA6h4Yd3dWPxMVdps2",
-            "phoneNumber": "01254789651",
-            "role": "user",
-            "createdAt": "2023-03-16T13:56:13.036Z",
-            "updatedAt": "2023-03-16T13:56:13.036Z",
-            "__v": 0
-        },
-        {
-            "_id": "64131f9a1a51b5873cd9b70f",
-            "firstName": "john",
-            "lastName": "doe",
-            "age": 18,
-            "email": "johndoe@examplemail.com",
-            "password": "$2b$10$2SgroUM5ozSUMwhQqUAW8eFC1XcxIgDpfYgLA6h4Yd3dWPxMVdps2",
-            "phoneNumber": "01254789651",
-            "role": "user",
-            "createdAt": "2023-03-16T14:01:30.163Z",
-            "updatedAt": "2023-03-16T14:01:30.163Z",
-            "__v": 0
-        }
-    ]
-}
-```
-
-# Get User by Email Endpoint
-## `GET ap1/v1/user/:email`
-
-Fetches details of a single user by email using query parametres.
-
-#### Query Parameters
-
-- `email` (string, required) - The email address of the user to fetch details for.
-
-```json
-http://localhost:4532/api/v1/user/johndoe@examplemail.com
-```
-
-#### Response
-```json
-{
-    "userDetail": {
-        "_id": "64131ffd1a51b5873cd9b717",
-        "firstName": "john",
-        "lastName": "doe",
-        "age": 18,
-        "email": "johndoe@exmplemail.com",
-        "password": "$2b$10$MmeQQymL7IMlzFl/35tL9uN3A28avr0UdoDK7BxtqspqcX5Zw.RfS",
-        "phoneNumber": "01254789651",
-        "role": "user",
-        "createdAt": "2023-03-16T13:56:13.036Z",
-        "updatedAt": "2023-03-16T13:56:13.036Z",
-        "__v": 0
+  "users": [
+    {
+      "_id": "641869fd092de2fd7fad54d9",
+      "firstName": "Terence",
+      "lastName": "Greenholt",
+      "age": 609,
+      "email": "Manuela_Batz@hotmail.com",
+      "password": "$2b$10$y8fWILfbTl00gF5wXxeuSOEYgN7Pih/W1ma9gXNSDqXDhd84gpOsS",
+      "phoneNumber": "7461316499461",
+      "role": "user",
+      "createdAt": "2023-03-20T14:13:17.564Z",
+      "updatedAt": "2023-03-20T14:13:17.564Z",
+      "__v": 0
+    },
+    {
+      "_id": "64186a00092de2fd7fad54dd",
+      "firstName": "Jack",
+      "lastName": "Herzog",
+      "age": 465,
+      "email": "Erica_Nolan@gmail.com",
+      "password": "$2b$10$toNT8zwu7GpfUjXhyeD2vuK5IZc5WsNIGWho/mKB7PVUX9DtKewU6",
+      "phoneNumber": "7461316499461",
+      "role": "user",
+      "createdAt": "2023-03-20T14:13:20.841Z",
+      "updatedAt": "2023-03-20T14:13:20.841Z",
+      "__v": 0
+    },
+    {
+      "_id": "64186a03092de2fd7fad54e1",
+      "firstName": "Brittany",
+      "lastName": "Volkman",
+      "age": 623,
+      "email": "Meaghan.Rippin@hotmail.com",
+      "password": "$2b$10$8SyMgjHnoG4UDapVW1T0KukISPjw7SjGmK1g3EwRyJT4ZyCLXE18G",
+      "phoneNumber": "7461316499461",
+      "role": "user",
+      "createdAt": "2023-03-20T14:13:23.889Z",
+      "updatedAt": "2023-03-20T14:13:23.889Z",
+      "__v": 0
+    },
+    {
+      "_id": "64186a06092de2fd7fad54e5",
+      "firstName": "Ruben",
+      "lastName": "Kohler",
+      "age": 723,
+      "email": "Gonzalo.Hagenes@yahoo.com",
+      "password": "$2b$10$u2jW/gx9JlLrMtyV2N2syuC4uRU.JbZ/eDsd8vmefHFQ5NqeZkVr2",
+      "phoneNumber": "7461316499461",
+      "role": "user",
+      "createdAt": "2023-03-20T14:13:26.812Z",
+      "updatedAt": "2023-03-20T14:13:26.812Z",
+      "__v": 0
+    },
+    {
+      "_id": "64186a0b092de2fd7fad54e9",
+      "firstName": "Lillian",
+      "lastName": "Heaney",
+      "age": 556,
+      "email": "Marcia4@gmail.com",
+      "password": "$2b$10$/M5XpKw./cJBR.iiMtaZS.CwVQAI9rGPXe3kkxVf61Mc/APebZXfO",
+      "phoneNumber": "7461316499461",
+      "role": "user",
+      "createdAt": "2023-03-20T14:13:31.733Z",
+      "updatedAt": "2023-03-20T14:13:31.733Z",
+      "__v": 0
     }
+  ]
 }
 ```
 
 - `userDetail` (object) - An object containing details of the user.
 
 # Add or Update existing drink
-## Endpoint: `ap1/v1/user/createdrink` 
+## Endpoint: `ap1/v1/user/addproduct` 
 
-Adds a new drink or updates an existing one.
+Adds a new product or updates an existing one.
 
 #### Request Body
 
-- `drinkName` (string, required) - The name of the drink.
-- `manufacturer` (string, required) - The manufacturer of the drink.
-- `quantity` (number, required) - The quantity of the drink to add.
-- `price` (number, required) - The price of the drink.
+- `productName` (string, required) - The name of the product.
+- `category` (string, required) - The category of the product.
+- `quantity` (number, required) - The quantity of the product to add.
+- `price` (number, required) - The price of the product.
 
 ```json 
 {
-     "drinkName" : "7 up",
-      "manufacturer": "Coca-Cola",
-      "quantity": "1",
-      "price" : "250"
+    "productName" : "Fanta",
+    "category" : "Drinks",
+    "quantity" : "7",
+    "price" : "200"
 }
 ```
 
 #### Response
-
-- `message` (string) - A message indicating whether the drink was added or updated successfully.
-- `newDrink` (object) - An object containing details of the newly added drink, if a new drink was added.
 ```json 
 {
-    "message": "7 up added successfully",
-    "newDrink": {
-        "drinkName": "7 up",
-        "manufacturer": "Coca-Cola",
-        "price": "250",
-        "quantity": 1,
-        "_id": "6415893b659abdc0cdcfe914",
-        "createdAt": "2023-03-18T09:49:47.160Z",
-        "updatedAt": "2023-03-18T09:49:47.160Z",
-        "__v": 0
-        }
+  "message": "Sprite added successfully",
+  "newProduct": {
+    "productName": "Sprite",
+    "category": "Drinks",
+    "price": "200",
+    "quantity": 5,
+    "_id": "6418665077c30002882ee83d",
+    "createdAt": "2023-03-20T13:57:36.807Z",
+    "updatedAt": "2023-03-20T13:57:36.807Z",
+    "__v": 0
+  }
 }
 ```
-**Update drink if particular drink is availabe in the db**
+**Update product if particular product is availabe in the database**
 ```json 
 {
-    "message": "7 up updated by 1"
+  "message": "Sprite updated by 7"
 }
 ```
-# Available Drinks
-Returns a list of available drinks.
+# Available Products
+Returns a list of available products by their category.
 
-Endpoint: `GET ap1/v1/user/alldrinks`
+Endpoint: `GET ap1/v1/user/allproduct/:category`
 
 **Request**
 ```json
-http://localhost:4532/api/v1/user/alldrinks
+http://localhost:4532/ap1/v1/user/allproduct/Confectionery
 ```
 
 **Response Body**
 ```json
 {
-    "alldrinks": [
-        {
-            "_id": "641320721a51b5873cd9b71b",
-            "drinkName": "Fanta",
-            "manufacturer": "Coca-Cola",
-            "price": "200",
-            "quantity": 4,
-            "createdAt": "2023-03-16T13:58:10.880Z",
-            "updatedAt": "2023-03-16T13:58:23.875Z",
-            "__v": 0
-        },
-        {
-            "_id": "6413208c1a51b5873cd9b724",
-            "drinkName": "Coke",
-            "manufacturer": "Coca-Cola",
-            "price": "200",
-            "quantity": 4,
-            "createdAt": "2023-03-16T13:58:36.997Z",
-            "updatedAt": "2023-03-16T13:58:44.526Z",
-            "__v": 0
-        },
-        {
-            "_id": "6413209f1a51b5873cd9b72d",
-            "drinkName": "Sprite",
-            "manufacturer": "Coca-Cola",
-            "price": "200",
-            "quantity": 8,
-            "createdAt": "2023-03-16T13:58:55.698Z",
-            "updatedAt": "2023-03-16T13:59:50.772Z",
-            "__v": 0
-        },
-        {
-            "_id": "64132442fbcd7fd178fc4a3e",
-            "drinkName": "Amstel Malta",
-            "manufacturer": "NBC",
-            "price": "250",
-            "quantity": 1,
-            "createdAt": "2023-03-16T14:14:26.937Z",
-            "updatedAt": "2023-03-16T14:14:26.937Z",
-            "__v": 0
-        },
-        {
-            "_id": "6415893b659abdc0cdcfe914",
-            "drinkName": "7 up",
-            "manufacturer": "Coca-Cola",
-            "price": "250",
-            "quantity": 2,
-            "createdAt": "2023-03-18T09:49:47.160Z",
-            "updatedAt": "2023-03-18T09:52:35.284Z",
-            "__v": 0
-        }
-    ]
+  "categoryItems": [
+    {
+      "productName": "Fried Rice",
+      "price": "2700",
+      "quantity": 3
+    },
+    {
+      "productName": "Ofada Rice",
+      "price": "3450",
+      "quantity": 4
+    },
+    {
+      "productName": "Isi Ewu",
+      "price": "1500",
+      "quantity": 5
+    },
+    {
+      "productName": "Egusi Soup",
+      "price": "1700",
+      "quantity": 6
+    }
+  ]
 }
 ```
-- `allDrink` (object) - An object containing details of all the drinks available in the database.
+
+Endpoint: `GET ap1/v1/user/allproduct/:category`
+
+**Request**
+```json
+http://localhost:4532/ap1/v1/user/allproduct/Drinks
+```
+
+**Response Body**
+```json
+{
+  "categoryItems": [
+    {
+      "productName": "Coke",
+      "price": "200",
+      "quantity": 8
+    },
+    {
+      "productName": "Sprite",
+      "price": "200",
+      "quantity": 12
+    }
+  ]
+}
+```
+
+- `allproduct` (object) - An object containing details of all the products available in the database.
 
 # POSTMAN DOCUMENTATION
 ```json
