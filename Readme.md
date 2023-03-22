@@ -34,7 +34,7 @@ To get started with this project, follow these steps:
 
 ## Entity Relationship Model for the API
 
-![Alt text](https://res.cloudinary.com/dtdcb7llh/image/upload/v1679141114/bamboogerd_qouxza.jpg)
+![Alt text](https://res.cloudinary.com/dtdcb7llh/image/upload/v1679477063/updatederm_zrmv4l.jpg)
 
 # API Endpoints
 
