@@ -9,7 +9,7 @@ exports.userSignup = async (req, res) => {
     try {
     const emailexists = await User.findOne({ email });
     const phoneNumberExists = await User.findOne({ phoneNumber });
-
+        console.log(emailexists);
     if (emailexists && phoneNumberExists){
         return res.status(409).json({
             message: "user with these details exists"
